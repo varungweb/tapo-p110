@@ -1,9 +1,11 @@
 services:
-  tapo-web:
+  tapo-p110:
     build: .
+    container_name: tapo-p110-web
     ports:
       - "8000:8000"
     environment:
       TAPO_USERNAME: "example@mail.com"
       TAPO_PASSWORD: "password"
       IP_ADDRESS: "192.168.x.x"
+    restart: unless-stopped
